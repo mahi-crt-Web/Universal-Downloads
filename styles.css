@@ -592,3 +592,73 @@ nav a:hover {
     margin-left: 0;
   }
 }
+/* Dark and Light Mode Button */
+
+.theme-toggle {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 22px;
+  background: #9333ea;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Light Mode */
+
+body.light-mode {
+  background: #f5f3ff;
+  color: #241044;
+}
+
+body.light-mode header,
+body.light-mode main,
+body.light-mode footer {
+  color: #241044;
+}
+
+body.light-mode .main-header {
+  background: linear-gradient(135deg, #e9d5ff, #f5d0fe);
+}
+
+body.light-mode .main-header h1,
+body.light-mode .main-header .subtitle {
+  color: #4c1d95;
+}
+
+body.light-mode .main-header .tagline {
+  color: #86198f;
+}
+
+body.light-mode .category-card {
+  background: linear-gradient(135deg, #ffffff, #ede9fe);
+  color: #4c1d95;
+}
+
+body.light-mode .category-card h3,
+body.light-mode .category-card p {
+  color: #4c1d95;
+}
+
+body.light-mode .categories-section h2 {
+  color: #4c1d95;
+}
+
+body.light-mode .categories-section > p {
+  color: #6b21a8;
+}
+
+body.light-mode .welcome-banner {
+  background: linear-gradient(135deg, #e9d5ff, #f0abfc);
+}
+
+body.light-mode .welcome-content h2,
+body.light-mode .welcome-content p {
+  color: #4c1d95;
+}
+
+body.light-mode #searchMessage {
+  color: #4c1d95;
+}
