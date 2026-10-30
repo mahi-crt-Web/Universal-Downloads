@@ -104,3 +104,43 @@ nav a:hover {
   background: #a855f7;
   transform: translateY(-3px);
 }
+/* Social Platform Sections */
+
+#instagram,
+#youtube,
+#tiktok {
+  margin: 25px auto;
+  padding: 30px;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #241044, #492078);
+  border: 1px solid #8b5cf6;
+}
+
+#instagram h2,
+#youtube h2,
+#tiktok h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+#instagram a,
+#youtube a,
+#tiktok a {
+  display: inline-block;
+  color: white;
+  background: #8b35d1;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+#instagram a:hover,
+#youtube a:hover,
+#tiktok a:hover {
+  background: #a855f7;
+  transform: translateY(-3px);
+}
