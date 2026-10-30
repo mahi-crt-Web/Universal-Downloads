@@ -288,3 +288,46 @@ if (youtubeUrlInput && youtubeBtn && youtubeMessage) {
     );
   });
 }
+// TIKTOK LINK HANDLER
+
+const tiktokUrlInput = document.getElementById("tiktokUrl");
+const tiktokBtn = document.getElementById("tiktokBtn");
+const tiktokMessage = document.getElementById("tiktokMessage");
+
+if (tiktokUrlInput && tiktokBtn && tiktokMessage) {
+  tiktokBtn.addEventListener("click", () => {
+    const rawUrl = tiktokUrlInput.value.trim();
+
+    if (!rawUrl) {
+      tiktokMessage.textContent = "Please paste a TikTok video link.";
+      return;
+    }
+
+    let parsedUrl;
+
+    try {
+      parsedUrl = new URL(rawUrl);
+    } catch {
+      tiktokMessage.textContent = "Please enter a valid URL.";
+      return;
+    }
+
+    const host = parsedUrl.hostname.toLowerCase();
+
+    if (host !== "tiktok.com" && !host.endsWith(".tiktok.com")) {
+      tiktokMessage.textContent = "Please enter a TikTok link.";
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.href = parsedUrl.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open TikTok video";
+
+    tiktokMessage.replaceChildren(
+      document.createTextNode("Use TikTok's official download options when available: "),
+      link
+    );
+  });
+}
