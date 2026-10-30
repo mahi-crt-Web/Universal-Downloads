@@ -181,3 +181,18 @@ imageDownloadBtn.addEventListener("click", () => {
     downloadLink
   );
 });
+// CLOUDFLARE WORKER CONNECTION TEST
+
+const backendStatus = document.createElement("p");
+backendStatus.textContent = "Connecting to backend...";
+document.body.appendChild(backendStatus);
+
+fetch("https://universal-downloads.durgamaheswari335.workers.dev/")
+  .then(response => response.json())
+  .then(data => {
+    backendStatus.textContent = "✅ Backend Connected: " + data.message;
+  })
+  .catch(error => {
+    backendStatus.textContent = "❌ Backend connection failed.";
+    console.error(error);
+  });
