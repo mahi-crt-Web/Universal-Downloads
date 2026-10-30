@@ -239,3 +239,52 @@ if (instagramUrlInput && instagramBtn && instagramMessage) {
     );
   });
 }
+// YOUTUBE LINK HANDLER
+
+const youtubeUrlInput = document.getElementById("youtubeUrl");
+const youtubeBtn = document.getElementById("youtubeBtn");
+const youtubeMessage = document.getElementById("youtubeMessage");
+
+if (youtubeUrlInput && youtubeBtn && youtubeMessage) {
+  youtubeBtn.addEventListener("click", () => {
+    const rawUrl = youtubeUrlInput.value.trim();
+
+    if (!rawUrl) {
+      youtubeMessage.textContent = "Please paste a YouTube video link.";
+      return;
+    }
+
+    let parsedUrl;
+
+    try {
+      parsedUrl = new URL(rawUrl);
+    } catch {
+      youtubeMessage.textContent = "Please enter a valid URL.";
+      return;
+    }
+
+    const host = parsedUrl.hostname.toLowerCase();
+    const validHost = [
+      "youtube.com",
+      "www.youtube.com",
+      "m.youtube.com",
+      "youtu.be"
+    ];
+
+    if (!validHost.includes(host)) {
+      youtubeMessage.textContent = "Please enter a YouTube link.";
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.href = parsedUrl.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open YouTube video";
+
+    youtubeMessage.replaceChildren(
+      document.createTextNode("Use YouTube's official options where available: "),
+      link
+    );
+  });
+}
