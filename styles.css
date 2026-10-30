@@ -321,3 +321,76 @@ nav a:hover {
   font-weight: bold;
   text-decoration: none;
 }
+/* Professional Homepage Header */
+
+.main-header {
+  text-align: center;
+  padding: 55px 20px;
+  margin: 20px auto;
+  max-width: 1100px;
+  background: linear-gradient(135deg, #160b35, #51218a, #861c9c);
+  border: 1px solid #a855f7;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px rgba(139, 92, 246, 0.25);
+}
+
+.main-header h1 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px #c084fc;
+}
+
+.main-header .tagline {
+  color: #f0abfc;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.main-header .subtitle {
+  color: #e9d5ff;
+  font-size: 16px;
+  margin: 15px 0 25px;
+}
+
+.main-header nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.main-header nav a {
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid #c084fc;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-header nav a:hover {
+  background: #a855f7;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    padding: 35px 12px;
+  }
+
+  .main-header h1 {
+    font-size: 29px;
+  }
+
+  .main-header .tagline {
+    font-size: 19px;
+  }
+
+  .main-header nav a {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
