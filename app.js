@@ -196,3 +196,46 @@ fetch("https://universal-downloads.durgamaheswari335.workers.dev/")
     backendStatus.textContent = "❌ Backend connection failed.";
     console.error(error);
   });
+// INSTAGRAM LINK HANDLER
+
+const instagramUrlInput = document.getElementById("instagramUrl");
+const instagramBtn = document.getElementById("instagramBtn");
+const instagramMessage = document.getElementById("instagramMessage");
+
+if (instagramUrlInput && instagramBtn && instagramMessage) {
+  instagramBtn.addEventListener("click", () => {
+    const rawUrl = instagramUrlInput.value.trim();
+
+    if (!rawUrl) {
+      instagramMessage.textContent = "Please paste an Instagram video or Reel link.";
+      return;
+    }
+
+    let parsedUrl;
+
+    try {
+      parsedUrl = new URL(rawUrl);
+    } catch {
+      instagramMessage.textContent = "Please enter a valid URL.";
+      return;
+    }
+
+    const host = parsedUrl.hostname.toLowerCase();
+
+    if (host !== "instagram.com" && !host.endsWith(".instagram.com")) {
+      instagramMessage.textContent = "Please enter an Instagram link.";
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.href = parsedUrl.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open Instagram video";
+
+    instagramMessage.replaceChildren(
+      document.createTextNode("Use Instagram's official options or creator-authorized content: "),
+      link
+    );
+  });
+}
