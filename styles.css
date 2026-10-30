@@ -394,3 +394,74 @@ nav a:hover {
     font-size: 13px;
   }
 }
+/* Welcome Banner Design */
+
+.welcome-banner {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #31105f, #7e22ce, #c026d3);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+  animation: welcomeFade 1.2s ease;
+}
+
+.welcome-content h2 {
+  color: white;
+  font-size: 32px;
+  animation: welcomeFloat 3s ease-in-out infinite;
+}
+
+.welcome-content p {
+  color: #f3e8ff;
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 28px;
+  color: #6b21a8;
+  background: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  transform: scale(1.08);
+  background: #f0abfc;
+}
+
+@keyframes welcomeFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes welcomeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-banner {
+    padding: 35px 15px;
+  }
+
+  .welcome-content h2 {
+    font-size: 24px;
+  }
+}
