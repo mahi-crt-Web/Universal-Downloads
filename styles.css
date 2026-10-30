@@ -537,3 +537,58 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Website Search Bar Design */
+
+.website-search {
+  max-width: 650px;
+  margin: 25px auto 35px;
+  text-align: center;
+}
+
+.website-search input {
+  width: 65%;
+  padding: 15px;
+  border: 2px solid #a855f7;
+  border-radius: 25px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.website-search input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.3);
+}
+
+.website-search button {
+  padding: 15px 22px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.website-search button:hover {
+  transform: translateY(-3px);
+}
+
+#searchMessage {
+  color: #e9d5ff;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .website-search input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .website-search button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
