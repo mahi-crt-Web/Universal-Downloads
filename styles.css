@@ -267,3 +267,57 @@ nav a:hover {
   font-weight: bold;
   text-decoration: none;
 }
+/* TikTok Separate Design */
+
+#tiktok {
+  background: linear-gradient(135deg, #050505, #181818);
+  padding: 35px 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 22px;
+  border: 2px solid #25f4ee;
+  box-shadow: 4px 4px 20px rgba(37, 244, 238, 0.2);
+}
+
+#tiktok h2 {
+  color: #25f4ee;
+  font-size: 28px;
+  text-shadow: 2px 2px #fe2c55;
+}
+
+#tiktok p {
+  color: white;
+}
+
+#tiktok input {
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  border: 1px solid #25f4ee;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+}
+
+#tiktok button {
+  background: #25f4ee;
+  color: #050505;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#tiktok button:hover {
+  background: #fe2c55;
+  color: white;
+  transform: translateY(-3px);
+}
+
+#tiktok a {
+  color: #fe2c55;
+  font-weight: bold;
+  text-decoration: none;
+}
