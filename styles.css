@@ -80,3 +80,27 @@ footer {
   padding: 25px;
   color: #bba8d0;
 }
+/* Navigation Menu */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  background: #6c35b5;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #a855f7;
+  transform: translateY(-3px);
+}
