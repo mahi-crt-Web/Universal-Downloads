@@ -331,3 +331,51 @@ if (tiktokUrlInput && tiktokBtn && tiktokMessage) {
     );
   });
 }
+// WEBSITE CATEGORY SEARCH
+
+const categorySearch = document.getElementById("categorySearch");
+const searchBtn = document.getElementById("searchBtn");
+const searchMessage = document.getElementById("searchMessage");
+
+if (categorySearch && searchBtn && searchMessage) {
+  function searchCategory() {
+    const query = categorySearch.value.trim().toLowerCase();
+
+    if (!query) {
+      searchMessage.textContent = "Please enter a category name.";
+      return;
+    }
+
+    const categories = [
+      { names: ["video", "videos"], id: "video" },
+      { names: ["song", "songs", "music"], id: "songs" },
+      { names: ["image", "images", "photo", "photos"], id: "images" },
+      { names: ["instagram"], id: "instagram" },
+      { names: ["youtube"], id: "youtube" },
+      { names: ["tiktok"], id: "tiktok" }
+    ];
+
+    const match = categories.find(category =>
+      category.names.some(name => name.includes(query) || query.includes(name))
+    );
+
+    if (match) {
+      document.getElementById(match.id).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      searchMessage.textContent = "Opening " + match.names[0] + "...";
+    } else {
+      searchMessage.textContent = "Category not found. Try Videos, Songs or Images.";
+    }
+  }
+
+  searchBtn.addEventListener("click", searchCategory);
+
+  categorySearch.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      searchCategory();
+    }
+  });
+}
