@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header>
     <h1>💜 Universal Downloads</h1>
     <p>Songs • Videos • Images</p>
@@ -15,24 +16,38 @@
 
   <main>
     <section class="hero">
-      <h2>Download Your Favourite Media</h2>
-      <p>Simple, fast and free. Save files you own or have permission to download.</p>
+      <h2>🎬 Video Downloader</h2>
+      <p>Paste a direct video file link below.</p>
 
-      <input type="url" id="mediaUrl" placeholder="Paste a direct media file link">
-      <button id="downloadBtn">Download</button>
+      <input
+        type="url"
+        id="mediaUrl"
+        placeholder="Paste direct MP4 video link"
+      >
 
-      <p>Or select a file from your computer:</p>
-      <input type="file" id="fileInput" accept="audio/*,video/*,image/*">
-      <div id="message"></div>
+      <button id="downloadBtn">Check Video Link</button>
+
+      <p id="message" aria-live="polite"></p>
     </section>
 
     <section class="notice">
-      <h3>Responsible Use</h3>
-      <p>Download only content you own or have permission to use. Respect creators' copyrights and platform rules.</p>
+      <h3>💜 Supported Downloads</h3>
+      <p>
+        Use direct video links and download only videos
+        you own or have permission to download.
+      </p>
+      <p>
+        YouTube, Instagram and TikTok videos must use
+        their official permitted download methods.
+      </p>
     </section>
   </main>
 
-  <footer>© 2026 Universal Downloads</footer>
+  <footer>
+    <p>© 2026 Universal Downloads</p>
+    <p>Respect creators. Use responsibly.</p>
+  </footer>
+
   <script src="app.js"></script>
 </body>
 </html>
