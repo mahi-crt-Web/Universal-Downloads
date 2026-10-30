@@ -32,7 +32,7 @@ downloadBtn.addEventListener("click", () => {
   if (isDirectVideo) {
     const link = document.createElement("a");
     link.href = parsedUrl.href;
-    link.download = "";
+    link.download = parsedUrl.pathname.split("/").pop() || "video.mp4";
     link.textContent = "Download Video";
 
     message.replaceChildren(
@@ -107,7 +107,7 @@ songDownloadBtn.addEventListener("click", () => {
 
   const downloadLink = document.createElement("a");
   downloadLink.href = parsedUrl.href;
-  downloadLink.download = "";
+  downloadLink.download = parsedUrl.pathname.split("/").pop() || "song.mp3";
   downloadLink.textContent = "Download Song";
 
   songMessage.replaceChildren(
@@ -172,7 +172,7 @@ imageDownloadBtn.addEventListener("click", () => {
 
   const downloadLink = document.createElement("a");
   downloadLink.href = parsedUrl.href;
-  downloadLink.download = "";
+  downloadLink.download = parsedUrl.pathname.split("/").pop() || "image.jpg";
   downloadLink.textContent = "Download Image";
 
   imageMessage.replaceChildren(
