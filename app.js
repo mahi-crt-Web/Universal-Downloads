@@ -116,3 +116,68 @@ songDownloadBtn.addEventListener("click", () => {
     downloadLink
   );
 });
+// IMAGES DOWNLOADER
+
+const imageUrlInput = document.getElementById("imageUrl");
+const imageDownloadBtn = document.getElementById("imageDownloadBtn");
+const imageMessage = document.getElementById("imageMessage");
+
+imageDownloadBtn.addEventListener("click", () => {
+  const url = imageUrlInput.value.trim();
+
+  if (!url) {
+    imageMessage.textContent = "Please paste an image link.";
+    return;
+  }
+
+  let parsedUrl;
+
+  try {
+    parsedUrl = new URL(url);
+  } catch {
+    imageMessage.textContent = "Please enter a valid image URL.";
+    return;
+  }
+
+  if (!["https:", "http:"].includes(parsedUrl.protocol)) {
+    imageMessage.textContent = "Invalid image link.";
+    return;
+  }
+
+  const imageTypes = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
+
+  const isDirectImage = imageTypes.some(type =>
+    parsedUrl.pathname.toLowerCase().endsWith(type)
+  );
+
+  if (!isDirectImage) {
+    const link = document.createElement("a");
+    link.href = parsedUrl.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open image page";
+
+    imageMessage.replaceChildren(
+      document.createTextNode("Use a direct image link: "),
+      link
+    );
+    return;
+  }
+
+  const preview = document.createElement("img");
+  preview.src = parsedUrl.href;
+  preview.alt = "Image preview";
+  preview.style.maxWidth = "100%";
+  preview.style.maxHeight = "300px";
+
+  const downloadLink = document.createElement("a");
+  downloadLink.href = parsedUrl.href;
+  downloadLink.download = "";
+  downloadLink.textContent = "Download Image";
+
+  imageMessage.replaceChildren(
+    preview,
+    document.createElement("br"),
+    downloadLink
+  );
+});
