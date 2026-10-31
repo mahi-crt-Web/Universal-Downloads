@@ -180,6 +180,9 @@ imageDownloadBtn.addEventListener("click", () => {
   downloadLink.href = parsedUrl.href;
   downloadLink.download = parsedUrl.pathname.split("/").pop() || "image.jpg";
   downloadLink.textContent = "Download Image";
+  downloadLink.addEventListener("click", () => {
+  saveDownloadHistory("Image", parsedUrl.href, downloadLink.download);
+});
 
   imageMessage.replaceChildren(
     preview,
