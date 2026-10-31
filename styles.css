@@ -664,10 +664,10 @@ body.light-mode #searchMessage {
 }
 /* Universal Downloads Logo */
 .website-logo {
-  width: 180px;
+  width: 100px;
   height: auto;
   display: block;
-  margin: 0 auto 20px;
-  border-radius: 15px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
   object-fit: contain;
 }
