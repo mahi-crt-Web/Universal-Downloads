@@ -112,6 +112,9 @@ songDownloadBtn.addEventListener("click", () => {
   downloadLink.href = parsedUrl.href;
   downloadLink.download = parsedUrl.pathname.split("/").pop() || "song.mp3";
   downloadLink.textContent = "Download Song";
+  downloadLink.addEventListener("click", () => {
+  saveDownloadHistory("Song", parsedUrl.href, downloadLink.download);
+});
 
   songMessage.replaceChildren(
     audio,
