@@ -662,3 +662,12 @@ body.light-mode .welcome-content p {
 body.light-mode #searchMessage {
   color: #4c1d95;
 }
+/* Universal Downloads Logo */
+.website-logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 15px;
+  object-fit: contain;
+}
