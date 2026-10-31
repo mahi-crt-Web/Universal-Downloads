@@ -394,3 +394,70 @@ if (themeToggle) {
     }
   });
 }
+// DOWNLOAD HISTORY
+function saveDownloadHistory(type, url, filename) {
+  const history = JSON.parse(
+    localStorage.getItem("downloadHistory") || "[]"
+  );
+
+  history.unshift({
+    type: type,
+    url: url,
+    filename: filename,
+    date: new Date().toLocaleString()
+  });
+
+  localStorage.setItem(
+    "downloadHistory",
+    JSON.stringify(history.slice(0, 30))
+  );
+
+  displayDownloadHistory();
+}
+
+function displayDownloadHistory() {
+  let section = document.getElementById("downloadHistory");
+
+  if (!section) {
+    section = document.createElement("section");
+    section.id = "downloadHistory";
+    section.className = "hero";
+    document.body.appendChild(section);
+  }
+
+  const history = JSON.parse(
+    localStorage.getItem("downloadHistory") || "[]"
+  );
+
+  section.replaceChildren();
+
+  const heading = document.createElement("h2");
+  heading.textContent = "📥 Download History";
+  section.appendChild(heading);
+
+  if (history.length === 0) {
+    const empty = document.createElement("p");
+    empty.textContent = "No download history yet.";
+    section.appendChild(empty);
+    return;
+  }
+
+  history.forEach(item => {
+    const entry = document.createElement("p");
+    entry.textContent =
+      item.type + " - " + item.filename + " - " + item.date;
+    section.appendChild(entry);
+  });
+
+  const clearButton = document.createElement("button");
+  clearButton.textContent = "Clear History";
+
+  clearButton.addEventListener("click", () => {
+    localStorage.removeItem("downloadHistory");
+    displayDownloadHistory();
+  });
+
+  section.appendChild(clearButton);
+}
+
+displayDownloadHistory();
