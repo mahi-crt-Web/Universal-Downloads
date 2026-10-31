@@ -33,6 +33,9 @@ downloadBtn.addEventListener("click", () => {
     const link = document.createElement("a");
     link.href = parsedUrl.href;
     link.download = parsedUrl.pathname.split("/").pop() || "video.mp4";
+    link.addEventListener("click", () => {
+  saveDownloadHistory("Video", parsedUrl.href, link.download);
+});
     link.textContent = "Download Video";
 
     message.replaceChildren(
